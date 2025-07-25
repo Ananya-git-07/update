@@ -1,7 +1,7 @@
 "use client"
 
 import { Link } from "react-router-dom"
-import { Scale, Mail, Phone, MapPin } from 'lucide-react'
+import { Scale, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
 import { useTranslation } from "react-i18next"
 
 const Footer = () => {
@@ -13,9 +13,8 @@ const Footer = () => {
         <div className="py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Brand Section */}
-            <div className="col-span-1 md:col-span-2 flex flex-col">
-              <div className="mb-10" /> {/* Spacer to shift NyayaSaathi down */}
-              <Link to="/" className="flex items-center gap-3 mt-4 mb-2">
+            <div className="col-span-1 md:col-span-2">
+              <Link to="/" className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center shadow-md">
                   <Scale size={20} className="text-white" />
                 </div>
@@ -24,11 +23,38 @@ const Footer = () => {
                   <span className="text-slate-800">Saathi</span>
                 </span>
               </Link>
+              <p className="text-slate-600 mb-4 max-w-md">{t("footer.tagline")}</p>
+              <div className="flex space-x-4">
+                <a
+                  href="#"
+                  className="w-10 h-10 bg-slate-200 hover:bg-cyan-100 rounded-lg flex items-center justify-center text-slate-600 hover:text-cyan-600 transition-colors"
+                >
+                  <Facebook size={20} />
+                </a>
+                <a
+                  href="#"
+                  className="w-10 h-10 bg-slate-200 hover:bg-cyan-100 rounded-lg flex items-center justify-center text-slate-600 hover:text-cyan-600 transition-colors"
+                >
+                  <Twitter size={20} />
+                </a>
+                <a
+                  href="#"
+                  className="w-10 h-10 bg-slate-200 hover:bg-cyan-100 rounded-lg flex items-center justify-center text-slate-600 hover:text-cyan-600 transition-colors"
+                >
+                  <Instagram size={20} />
+                </a>
+                <a
+                  href="#"
+                  className="w-10 h-10 bg-slate-200 hover:bg-cyan-100 rounded-lg flex items-center justify-center text-slate-600 hover:text-cyan-600 transition-colors"
+                >
+                  <Linkedin size={20} />
+                </a>
+              </div>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-4">{t("quickLinks")}</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mb-4">{t("footer.quickLinks")}</h3>
               <ul className="space-y-2">
                 <li>
                   <Link to="/" className="text-slate-600 hover:text-cyan-600 transition-colors">
@@ -37,7 +63,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link to="/legal-help" className="text-slate-600 hover:text-cyan-600 transition-colors">
-                    Legal Help
+                    {t("footer.legalHelp")}
                   </Link>
                 </li>
                 <li>
@@ -55,7 +81,7 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-4">{t("contact")}</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mb-4">{t("footer.contactUs")}</h3>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-slate-600">
                   <Mail size={16} />
@@ -63,11 +89,11 @@ const Footer = () => {
                 </li>
                 <li className="flex items-center gap-3 text-slate-600">
                   <Phone size={16} />
-                  <span>70785674XX</span>
+                  <span>1800-123-4567</span>
                 </li>
                 <li className="flex items-center gap-3 text-slate-600">
                   <MapPin size={16} />
-                  <span>New Delhi, India</span>
+                  <span>{t("footer.address")}</span>
                 </li>
               </ul>
             </div>
@@ -77,18 +103,16 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-slate-200">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-slate-600 text-sm">
-              © 2024 NyayaSaathi. All rights reserved. | Government of India Initiative
-            </p>
+            <p className="text-slate-600 text-sm">{t("footer.copyright")}</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link to="/privacy" className="text-slate-600 hover:text-cyan-600 text-sm transition-colors">
-                Privacy Policy
+                {t("footer.privacy")}
               </Link>
               <Link to="/terms" className="text-slate-600 hover:text-cyan-600 text-sm transition-colors">
-                Terms of Service
+                {t("footer.terms")}
               </Link>
               <Link to="/accessibility" className="text-slate-600 hover:text-cyan-600 text-sm transition-colors">
-                Accessibility
+                {t("footer.accessibility")}
               </Link>
             </div>
           </div>
